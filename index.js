@@ -1,9 +1,14 @@
 const express = require("express");
-const cors = require("cors");
 const config = require("config");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
+
+const server = require("http").Server(app);
+
+const cors = require("cors");
+
+app.use(cors({ origin: "*" }));
 
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(
@@ -14,10 +19,9 @@ app.use(
   })
 );
 
-// app.use("/api", require("./routes/newDataRouter"));
-// app.use("/api", require("./routes/setData"));
-// app.use("/api", require("./routes/getDataList"));
-//shavarsh350700 papoyan350700?
+app.use("/api", require("./routes/getDataList"));
+app.use("/api", require("./routes/newDataRouter"));
+app.use("/api", require("./routes/setData"));
 
 const PORT = 5000;
 async function start() {
@@ -27,8 +31,7 @@ async function start() {
       useUnifiedTopology: true,
       useCreateIndex: true,
     });
-
-    app.listen(process.env.PORT || PORT, () =>
+    server.listen(process.env.PORT || PORT, () =>
       console.log(`App has been started on portt ${PORT}...`)
     );
   } catch (e) {
@@ -38,3 +41,8 @@ async function start() {
 }
 
 start();
+
+// app.use("/api", require("./routes/newDataRouter"));
+// app.use("/api", require("./routes/setData"));
+// app.use("/api", require("./routes/getDataList"));
+//shavarsh350700 papoyan350700?
