@@ -14,7 +14,7 @@ app.use(
   })
 );
 
-app.use("/api", require("./routes/newDataRouter"));
+// app.use("/api", require("./routes/newDataRouter"));
 app.use("/api", require("./routes/setData"));
 app.use("/api", require("./routes/getDataList"));
 //shavarsh350700 papoyan350700?
