@@ -1,4 +1,4 @@
-const {Schema, model, Types} = require('mongoose')
+const { Schema, model, Types } = require("mongoose");
 
 const schema = new Schema({
   img: Array,
@@ -16,7 +16,6 @@ const schema = new Schema({
   sale: { type: Boolean },
   search_code: { type: String },
   loc: { type: String },
-})
+});
 
-
-module.exports = model('Home', schema)
+module.exports = model("Home", schema);

@@ -59,4 +59,4 @@ const createSbjectSearch = (obj) => {
   return newObj;
 };
 
-module.exports = createSbjectSearch
+module.exports = createSbjectSearch;
