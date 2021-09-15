@@ -2,7 +2,7 @@ const { Router } = require("express");
 
 const router = Router();
 
-const Home = require("../models/Home");
+const Home = require("../models/story");
 
 router.get("/houses", async (req, res) => {
   const candidate = await Home.find().sort({ $natural: -1 }).limit(8);
