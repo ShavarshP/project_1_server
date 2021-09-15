@@ -1,8 +1,7 @@
 const { Router } = require("express");
-const Home = require("../models/Home");
 const router = Router();
+const Home = require("../models/Home");
 
-// /api/auth/register
 router.post("/add", async (req, res) => {
   try {
     const {

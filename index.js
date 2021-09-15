@@ -20,8 +20,8 @@ app.use(
 );
 
 app.use("/api", require("./routes/getDataList"));
-// app.use("/api", require("./routes/newDataRouter"));
-// app.use("/api", require("./routes/setData"));
+app.use("/api", require("./routes/newDataRouter"));
+app.use("/api", require("./routes/setData"));
 
 const PORT = 5000;
 async function start() {
