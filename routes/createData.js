@@ -1,7 +1,5 @@
 const { Router } = require("express");
-
 const router = Router();
-
 const Home = require("../models/story");
 
 // router.get("/houses", async (req, res) => {

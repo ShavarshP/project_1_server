@@ -20,7 +20,7 @@ app.use(
 );
 
 app.use("/api", require("./routes/getDataList"));
-app.use("/api", require("./routes/newDataRouter"));
+app.use("/api", require("./routes/createData"));
 app.use("/api", require("./routes/setData"));
 
 const PORT = 5000;
