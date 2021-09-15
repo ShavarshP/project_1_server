@@ -2,7 +2,7 @@
 // const router = Router();
 const { Router } = require("express");
 const router = Router();
-const Home = require("../models/Home");
+// const Home = require("../models/Home");
 
 router.get("/partants", async (req, res) => {
   try {
