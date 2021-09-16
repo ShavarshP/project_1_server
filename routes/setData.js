@@ -21,24 +21,25 @@ router.post("/add", async (req, res) => {
       description,
       img,
     } = req.body;
-    // const home = new Home({
-    //   img: img,
-    //   Mobile_number: Mobile_number,
-    //   area: area,
-    //   building_type: building_type,
-    //   category: category,
-    //   street: street,
-    //   description: description,
-    //   district: district,
-    //   floor: floor,
-    //   price: price,
-    //   rent: rent,
-    //   rooms: rooms,
-    //   sale: sale,
-    //   search_code: search_code,
-    //   loc: "",
-    // });
-    // await home.save();
+
+    const home = new Home({
+      img: img,
+      Mobile_number: Mobile_number,
+      area: area,
+      building_type: building_type,
+      category: category,
+      street: street,
+      description: description,
+      district: district,
+      floor: floor,
+      price: price,
+      rent: rent,
+      rooms: rooms,
+      sale: sale,
+      search_code: search_code,
+      loc: "",
+    });
+    await home.save();
     res.status(201).json({ message: "data created" });
   } catch (e) {
     console.log(e);
