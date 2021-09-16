@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 
-// const Home = require("../models/Home");
+const Home = require("../models/home");
 
 router.post("/add", async (req, res) => {
   try {
