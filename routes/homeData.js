@@ -8,7 +8,7 @@ router.get("/houses", async (req, res) => {
   res.json(candidate);
 });
 
-router.get("/myhome/:_id", async (req, res) => {
+router.get("/my_home/:_id", async (req, res) => {
   try {
     const id = req.params;
     const homedate = await Home.findOne(id);
