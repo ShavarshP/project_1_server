@@ -16,11 +16,13 @@ router.post("/filtPage/:id", async (req, res) => {
     const limit = 8;
     const body = req.body;
     let newBody = {};
+
     for (let prop in body) {
       if (body[prop]) {
         newBody[prop] = body[prop];
       }
     }
+
     const id = req.params;
     const filter = await createSbjectSearch(newBody);
     const countDocuments = await Home.find(filter).countDocuments();
@@ -31,7 +33,7 @@ router.post("/filtPage/:id", async (req, res) => {
       .limit(limit);
     res.json({ candidate, count });
   } catch (e) {
-    res.status(500).json({ message: "Что-то пошло не так, попробуйте снова" });
+    res.status(500).json({ message: "Something went wrong, please try again" });
   }
 });
 

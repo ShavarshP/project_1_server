@@ -13,7 +13,7 @@ router.get("/myhome/:_id", async (req, res) => {
     const homedate = await Home.find(id);
     res.json(homedate);
   } catch (e) {
-    res.status(500).json({ message: "Что-то пошло не так, попробуйте снова" });
+    res.status(500).json({ message: "Something went wrong, please try again" });
   }
 });
 

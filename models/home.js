@@ -14,8 +14,8 @@ const schema = new Schema({
   rent: { type: Boolean },
   rooms: { type: String },
   sale: { type: Boolean },
-  search_code: { type: String },
+  search_code: { type: String, unique: true },
   loc: { type: String },
 });
 
-module.exports = model("Admin", schema);
+module.exports = model("Home", schema);
