@@ -13,8 +13,8 @@ router.get("/my_home/:_id", async (req, res) => {
     const id = req.params;
     const homedate = await Home.findOne(id);
     const img = await HomeList.findOne({ owner: id });
-
-    res.json({ ...homedate, img: img });
+    homedate.img = img.img;
+    res.json(homedate);
   } catch (e) {
     res.status(500).json({ message: "Something went wrong, please try again" });
   }
