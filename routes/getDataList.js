@@ -11,7 +11,7 @@ const creatCount = (data, limit, index = 1, arr = []) => {
   return creatCount(data - limit, limit, index + 1, [...arr, index]);
 };
 
-router.post("/filtPage/:id", async (req, res) => {
+router.post("/filt_page/:id", async (req, res) => {
   try {
     const limit = 8;
     const body = req.body;
