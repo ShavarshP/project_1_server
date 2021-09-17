@@ -24,7 +24,7 @@ router.post("/add", async (req, res) => {
     } = req.body;
 
     const home = new Home({
-      img: img,
+      img: img[0],
       Mobile_number: Mobile_number,
       area: area,
       building_type: building_type,
@@ -44,12 +44,7 @@ router.post("/add", async (req, res) => {
 
     const homedate = await Home.findOne({ search_code: search_code });
     const homeList = new HomeList({
-      img: homedate.img[0],
-      area: homedate.area,
-      street: homedate.street,
-      price: homedate.price,
-      rooms: homedate.rooms,
-      sale: homedate.sale,
+      img: img,
       owner: homedate._id,
     });
     await homeList.save();
