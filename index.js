@@ -22,6 +22,7 @@ app.use(
 app.use("/api", require("./routes/getDataList"));
 app.use("/api", require("./routes/homeData"));
 app.use("/api", require("./routes/setData"));
+app.use("/api", require("./routes/admin"))
 
 const PORT = 5000;
 async function start() {
