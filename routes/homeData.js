@@ -21,11 +21,11 @@ router.get("/my_home/:_id", async (req, res) => {
   }
 });
 
-router.get("/delete/:_id", auth, async (req, res) => {
+router.delete("/delete/:_id", auth, async (req, res) => {
   try {
     const id = req.params;
     await Home.deleteOne(id)
-    res.json({msj: 'delete data'});
+    res.json({ msj: 'delete data' });
   } catch (e) {
     res.status(500).json({ message: "Something went wrong, please try again" });
   }
